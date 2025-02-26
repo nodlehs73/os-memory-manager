@@ -20,22 +20,9 @@
     wantForDelete: .long 0
     printDeleteFirstPart: .asciz "%ld: "
     printDeleteSecondPart: .asciz "(%ld, %ld)\n"
-    debug: .asciz "ALEXXXXXXXXXXXXXXXXXXXXXX %ld\n"
-    debuggg: .asciz "debug frate\n"
     notEnoughMemory: .asciz "%ld: (0, 0)\n"
 .text
 .global main
-
-debug_function:
-    pushl $debug
-    call printf
-
-    pushl $0
-    call fflush
-
-    add $8, %esp
-
-    ret     
 
 main:
     pushl $QUERIES 
